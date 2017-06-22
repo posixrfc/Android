@@ -1,0 +1,7 @@
+adb start-server：启动adb进程
+adb kill-server：杀死adb进程
+adb install E:\yyh.apk
+adb uninstall 应用包名
+adb devices:列出与开发环境建立连接的android设备的列表
+adb shell:进入Android命令行
+netstat -ano:查看系统的端口占用情况
