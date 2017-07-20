@@ -35,9 +35,6 @@ public class MainActivity extends SlidingFragmentActivity {
 		initFragment();
 	}
 
-	/**
-	 * 初始化fragment, 将fragment数据填充给布局文件
-	 */
 	private void initFragment() {
 		FragmentManager fm = getSupportFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();// 开启事务
