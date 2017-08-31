@@ -43,7 +43,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode==KeyEvent.KEYCODE_MENU){
-			
 			if(isShowMenu){
 				//需要关闭所有菜单
 				int startOffset = 0;
@@ -57,9 +56,7 @@ public class MainActivity extends Activity implements OnClickListener{
 					isShowLevel2 = false;
 					startOffset += 200;
 				}
-				
 				AnimUtil.closeMenu(level1, startOffset);
-				
 			}else {
 				//需要显示所有菜单
 				AnimUtil.showMenu(level1,0);
@@ -67,10 +64,8 @@ public class MainActivity extends Activity implements OnClickListener{
 				isShowLevel2 = true;
 				AnimUtil.showMenu(level3,400);
 				isShowLevel3 = true;
-				
 			}
 			isShowMenu = !isShowMenu;
-			
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -96,7 +91,6 @@ public class MainActivity extends Activity implements OnClickListener{
 				AnimUtil.closeMenu(level2,startOffset);
 			}else{
 				//需要显示
-//				Log.e(tag, "执行显示操作");
 				AnimUtil.showMenu(level2,0);
 			}
 			isShowLevel2 = !isShowLevel2;
@@ -119,6 +113,4 @@ public class MainActivity extends Activity implements OnClickListener{
 			break;
 		}
 	}
-
-
 }

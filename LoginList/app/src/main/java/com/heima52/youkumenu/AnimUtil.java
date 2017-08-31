@@ -11,7 +11,6 @@ public class AnimUtil {
 		for (int i = 0; i < rl.getChildCount(); i++) {
 			rl.getChildAt(i).setEnabled(false);
 		}
-		
 		//pivotXValue: 0-1
 		RotateAnimation animation = new RotateAnimation(0, -180,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
@@ -19,9 +18,7 @@ public class AnimUtil {
 		animation.setDuration(500);
 		animation.setFillAfter(true);//动画结束后保持当时的状态
 		animation.setStartOffset(startOffset);
-		
 		animation.setAnimationListener(new MyAnimationListener());
-		
 		rl.startAnimation(animation);
 	}
 	
@@ -29,16 +26,13 @@ public class AnimUtil {
 		for (int i = 0; i < rl.getChildCount(); i++) {
 			rl.getChildAt(i).setEnabled(true);
 		}
-		
 		RotateAnimation animation = new RotateAnimation(-180, 0,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 1);
 		animation.setDuration(500);
 		animation.setFillAfter(true);//动画结束后保持当时的状态
 		animation.setStartOffset(startOffset);
-		
 		animation.setAnimationListener(new MyAnimationListener());
-		
 		rl.startAnimation(animation);
 	}
 	
@@ -54,6 +48,5 @@ public class AnimUtil {
 		@Override
 		public void onAnimationRepeat(Animation animation) {
 		}
-		
 	}
 }
