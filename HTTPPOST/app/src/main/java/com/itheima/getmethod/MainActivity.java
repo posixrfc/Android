@@ -44,10 +44,8 @@ public class MainActivity extends Activity {
 		Thread t = new Thread(){
 			@Override
 			public void run() {
-				//提交的数据需要经过url编码，英文和数字编码后不变
 				@SuppressWarnings("deprecation")
 				String path = "http://192.168.13.13/Web2/servlet/LoginServlet";
-				
 				try {
 					URL url = new URL(path);
 					HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -82,9 +80,5 @@ public class MainActivity extends Activity {
 			}
 		};
 		t.start();
-		
-		
-		
 	}
-
 }

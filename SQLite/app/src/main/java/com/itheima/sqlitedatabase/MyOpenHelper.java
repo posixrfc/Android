@@ -1,7 +1,5 @@
 package com.itheima.sqlitedatabase;
 
-import java.sql.ResultSet;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -16,7 +14,6 @@ public class MyOpenHelper extends SQLiteOpenHelper
 	//数据库创建时，此方法会调用
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("create table person(_id integer primary key autoincrement, name char(10), salary char(20), phone integer(20))");
 
 	}
 

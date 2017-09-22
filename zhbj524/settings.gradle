@@ -1,4 +1,0 @@
-include ':slidingMenuLibrary'
-include ':viewPagerIndicatorLibrary'
-include ':xUtilsLibrary'
-include ':zhbj52'
