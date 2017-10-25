@@ -10,11 +10,11 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.view.Menu;
+
 import android.view.View;
 
-public class MainActivity extends Activity {
-
+public class MainActivity extends Activity
+{
 	private MyserviceConn conn;
 	PublicBusiness pb;
 
@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 	public void click4(View v){
 		unbindService(conn);
 	}
-	class MyserviceConn implements ServiceConnection{
+	class MyserviceConn implements ServiceConnection {
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			pb = Stub.asInterface(service);
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	public void click5(View v){
+	public void click5(View v) {
 		try {
 			pb.qianXian();
 		} catch (RemoteException e) {

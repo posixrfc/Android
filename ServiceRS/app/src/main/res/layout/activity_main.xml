@@ -13,7 +13,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动远程服务" 
+        android:text="启动远程服务"
         android:onClick="click"
         />
     <Button
@@ -25,7 +25,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="绑定远程服务" 
+        android:text="绑定远程服务"
         android:onClick="click3"
         />
     <Button
