@@ -32,10 +32,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 "http://blog.csdn.net/iispring/article/details/47320407",
                 "http://blog.csdn.net/iispring/article/details/47622705"
         };
-        DownloadTask task = new DownloadTask("task-1");
-        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, urls);
+        new DownloadTask("task-1").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, urls).cancel(true);
         new DownloadTask("task-0").executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, urls);
-        task.cancel(true);
     }
 
     @Override
