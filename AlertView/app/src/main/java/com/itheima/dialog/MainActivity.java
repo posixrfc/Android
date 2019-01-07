@@ -1,5 +1,6 @@
 package com.itheima.dialog;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity
@@ -29,14 +31,19 @@ public class MainActivity extends Activity
 				Toast.makeText(MainActivity.this, "感谢使用本软件,再见", Toast.LENGTH_SHORT).show();
 			}
 		});
+		builder.setNeutralButton("OK", new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Toast.makeText(MainActivity.this, "不知结果怎么样", Toast.LENGTH_SHORT).show();
+			}
+		});
 		builder.setNegativeButton("取消", new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Toast.makeText(MainActivity.this, "若不自宫,一定不成功", Toast.LENGTH_SHORT).show();
 			}
 		});
-		AlertDialog ad = builder.create();
-		ad.show();
+		builder.create().show();
 	}
 	public void click2(View v)
 	{
@@ -79,5 +86,24 @@ public class MainActivity extends Activity
 			}
 		});
 		builder.show();
+	}
+	public void anyLayout(View v) {
+		AlertDialog.Builder builder = new Builder(this);
+		View inputView = View.inflate(this, R.layout.layout_input, null);
+		builder.setTitle("Valid Token").setIcon(R.drawable.ic_launcher).setView(inputView);
+		final EditText textField = inputView.findViewById(R.id.token);
+		builder.setPositiveButton("确定", new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String value = textField.getText().toString();
+				if (null == value || value.length() == 0) {
+					value = "token is null";
+				}
+				Toast.makeText(MainActivity.this, value, Toast.LENGTH_SHORT).show();
+			}
+		});
+		AlertDialog dialog = builder.create();
+		//dialog.dismiss();
+		dialog.show();
 	}
 }
